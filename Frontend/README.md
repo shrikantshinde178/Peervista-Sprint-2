@@ -4,7 +4,7 @@ This directory contains the frontend code for the PeerVista application, a peer-
 
 ## Project Setup
 
-2. **Clone the repository:**
+**Clone the repository:**
    
 To get started with the frontend development environment, follow these steps:
 
