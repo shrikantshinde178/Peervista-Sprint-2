@@ -1,0 +1,36 @@
+/* Professional Custom CSS for Login Form */
+.card {
+    background-color: #f0f5f9; /* Light blue-gray background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #007bff; /* Deep blue color */
+    color: #fff;
+    border-bottom: none;
+  }
+  
+  .btn-primary {
+    background-color: #007bff; /* Deep blue color */
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue shade */
+    border-color: #0056b3;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff; /* Deep blue color */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .link {
+    color: #007bff; /* Deep blue color */
+  }
+  
+  .link:hover {
+    color: #0056b3; /* Darker blue shade */
+  }
+  

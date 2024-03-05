@@ -1,0 +1,169 @@
+<div class="container main-discount border">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col">
+      <h3>
+        Find affortable plans with up to
+        <span class="span-heading">25% discount*</span>
+      </h3>
+      </div>
+      <div class="col-lg-4">
+        <!-- Add a button or link to navigate to cart page -->
+        <!-- <button class="btn btn-primary" routerLink="/user-cart">go to Cart</button> -->
+        <!-- dashboard.component.html -->
+<button class="btn btn-cart btn-primary" routerLink="/user-cart">
+  Buyed Policies
+  <span class="cart-badge">{{ cartItemCount }}</span>
+</button>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <h3 class="choose-aim">Choose Insurance Coverage of Your Choice</h3>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-fluid mt-2">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th class="tableheading">Policy Id</th>
+            <th class="tableheading">Name of the Policy</th>
+            <th class="tableheading">Coverage Amount</th>
+            <th class="tableheading">Term Months</th>
+            <th class="tableheading">Coverage Description</th>
+            <th class="tableheading">Payment Frequency</th>
+            <th class="tableheading">Premium Amount</th>
+            <th class="tableheading">Credit Score</th>
+            <th class="tableheading">Minimum Income PA</th>
+            <th class="tableheading">Buy Now</th>
+            
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let policy of policies">
+            <td>{{ policy.id }}</td>
+            <td>{{ policy.policyName }}</td>
+            <td>₹{{ policy.coverageAmount }}.00</td>
+            <td>{{ policy.policyTermMonths }}</td>
+            <td>{{ policy.policyCoverageDescription }}</td>
+            <td>{{ policy.premiumPaymentFrequency }}</td>
+            <td>₹{{ policy.premiumAmount }}.00</td>
+            <td>{{ policy.creditScoreRequirement }}</td>
+            <td>₹{{ policy.incomeRequirement }}</td>
+            <!-- <td>
+              <button class="btn" type="submit" (click)="Payment()">Buy</button>
+            </td> -->
+            <td>
+              <button class="btn btn-primary" (click)="addToCart(policy, policy.id, policy.coverageAmount)">
+                Buy
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- first policies listing tag -->
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="row plans">
+      <div class="col-lg-6">
+        <p class="p-heading">
+          Ensure Family's Health with Health Insurance<br />
+          Compare with & Save up to <span class="percent">88%*</span>
+        </p>
+      </div>
+      <!-- <div class="col-lg-2">
+      <button type="submit" class="btn btn-plans">View Plans</button>
+    </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container-fluid">
+    <div class="card" style="width: 100%">
+      <div class="border">
+        <p class="card-header">My applied policies</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <th class="tableheading">Policy Id</th>
+              <th class="tableheading">Name</th>
+              <!-- <th class="tableheading">Provider Name</th> -->
+              <th class="tableheading">Coverage Amount</th>
+              <th class="tableheading">Policy Term Months</th>
+              <th class="tableheading"> Premium Amount</th>
+              <th class="tableheading">Payment Frequency</th>
+              <!-- <th class="table heading">Provider</th> -->
+              <!-- <th class="tableheading">Action</th> -->
+            </thead>
+            <tbody>
+              <tr *ngFor="let cart of cartAppli">
+                <td>{{ cart.id }}</td>
+                <td>{{ cart.policy_Name }}</td>
+                <td>₹{{ cart.coverageAmount }}</td>  
+                <td>{{ cart.ptm }}</td>
+                <!-- <td>{{ cart.InsurancePolicy.providerName }}</td> -->
+                <td>₹{{ cart.premium_Amount }}</td>
+                <td>{{ cart.paymentFrequency }}</td>
+                <!-- <td>
+                  <button
+                    class="btn btn-danger"
+                    (click)="removeFromCart(cart)"
+                  >
+                    Remove from Cart
+                  </button>
+                </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+<div class="container">
+  <div class="container-fluid">
+    <div class="row">
+      <h1>Buyed Policies History</h1>
+      <hr>
+      <div class="table-buyed-history">
+          <table class="table">
+            <thead>
+              <tr class="tableheading">Policy Id</th>
+              <tr class="tableheading">Name</tr>
+              <tr class="tableheading">Coverage Amount</tr>
+              <tr class="tableheading"> Premium Amount</tr>
+              <tr class="tableheading">Payment Frequency</tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cart of cartAppli">
+                <td>{{ cart.id }}</td>
+                <td>{{ cart.policy_Name }}</td>
+                <td>₹{{ cart.coverageAmount }}</td>  
+                <td>{{ cart.ptm }}</td>
+                <td>₹{{ cart.premium_Amount }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+  </div>
+</div> -->

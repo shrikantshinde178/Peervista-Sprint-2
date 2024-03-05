@@ -1,0 +1,74 @@
+<!-- <form (ngSubmit)="signup()">
+    <div>
+      <label for="username">Username:</label>
+      <input type="text" id="username" [(ngModel)]="username" name="username" required minlength="4">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" [(ngModel)]="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" pattern=".{8,}" required minlength="8">
+    </div>
+    <button type="submit" >Sign Up</button>
+  </form>
+
+  <p>Already have an account? <a routerLink="/login">Login</a></p> -->
+
+  <!-- <form class="needs-validation" (ngSubmit)="signup()" novalidate>
+    <div class="mb-3">
+      <label for="username" class="form-label">Username:</label>
+      <input type="text" class="form-control" id="username" [(ngModel)]="username" name="username" required minlength="4">
+      <div class="invalid-feedback">
+        Please choose a username (at least 4 characters).
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+      <div class="invalid-feedback">
+        Please enter a valid email address.
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Password:</label>
+      <input type="password" class="form-control" id="password" [(ngModel)]="password" name="password" pattern=".{8,}" required minlength="8">
+      <div class="invalid-feedback">
+        Password must be at least 8 characters long.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Sign Up</button>
+  </form>
+  
+  <p class="mt-3">Already have an account? <a routerLink="/login">Login</a></p>
+   -->
+
+   <body>
+    <div class="container">
+      <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+          <div class="card">
+            <h5 class="card-header">Signup Form</h5>
+            <div class="card-body">
+              <form (ngSubmit)="signup()">
+                <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" class="form-control" [(ngModel)]="SignUpCredentials.username" name="username" required minlength="4">
+                </div>
+                <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" class="form-control" [(ngModel)]="SignUpCredentials.email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                </div>
+                <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" class="form-control" [(ngModel)]="SignUpCredentials.password" name="password" pattern=".{8,}" required minlength="8">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+              </form>
+              <p class="mt-3 text-center">Already have an account? <a routerLink="/login">Login</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
