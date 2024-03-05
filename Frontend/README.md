@@ -28,14 +28,6 @@ This frontend application includes the following components:
 
 These components interact with the backend API to perform user actions and display data.
 
-## Development
-
-For development, the following commands are useful:
-
-- `npm start`: Starts the development server with hot reloading.
-- `npm test`: Runs unit tests.
-- `npm build`: Builds the application for production.
-
 ## Status
 
 Currently, the login, signup, and homepage components are completed. Other components are under development.
@@ -43,12 +35,6 @@ Currently, the login, signup, and homepage components are completed. Other compo
 # PeerVista Frontend
 
 This repository contains the frontend codebase for PeerVista, a peer-to-peer platform built using Angular. It provides users with functionalities such as login, signup, homepage, and more.
-
-## Features
-
-- Login: Allows users to log in to their accounts.
-- Signup: Enables users to create new accounts.
-- Homepage: Provides a landing page for users with relevant information.
 
 ## Contributing
 
