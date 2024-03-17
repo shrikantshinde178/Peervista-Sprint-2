@@ -1,0 +1,42 @@
+/* Set a maximum width for the footer content */
+footer {
+    max-width: 100;
+    margin: auto;
+}
+
+/* Style for the images */
+.bg-image {
+    width: 100%;
+    height: 100px; /* Set a specific height for all images */
+    display: block; /* Remove any default inline display */
+}
+
+/* Set margin between images */
+.bg-image-container + .bg-image-container {
+    margin-left: 10px;
+}
+
+
+/* Set margin between images */
+.bg-image-container + .bg-image-container {
+    margin-left: 10px;
+}
+
+/* Optionally adjust spacing and alignment */
+.text-center {
+    text-align: center;
+}
+
+.p-3 {
+    padding: 1rem !important;
+}
+
+/* Ensure the GitHub link is displayed inline */
+.text-center p {
+    display: inline;
+    margin: 0;
+}
+
+.repo{
+    color: wheat;
+}

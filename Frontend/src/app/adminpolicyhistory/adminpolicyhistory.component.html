@@ -1,0 +1,96 @@
+<section class="container">
+<!-- Search Box -->
+<div class="search-box mt-5">
+  <input type="text" class="search-input" placeholder="Search by Policy Name" [(ngModel)]="searchTerm" (input)="searchPolicies()">
+</div>
+  
+  <!-- All Policies -->
+  <div class="row mt-3">
+    <div class="col-md-4" *ngFor="let policy of filteredPosts">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title filtered-policy-heading">{{ policy.policyName }}</h5>
+          <p class="card-text"><strong>Policy Id:</strong> {{ policy.id }}</p>
+          <p class="card-text"><strong>Coverage Amount (INR):</strong> {{ policy.coverageAmount }}</p>
+          <!-- Add other policy details here -->
+          <button class="btn btn-primary mt-2" (click)="fetchCustomers(policy.id)">Fetch Customers</button>
+          <button class="btn btn-danger ml-2 mt-2" (click)="deletePolicy(policy.id)">Delete Policy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="container">
+  
+  <div class="row mb-5">
+    <!-- Cards -->
+    <ng-container *ngIf="posts.length > 0; else noPolicies">
+      <div class="col-md-4" *ngFor="let policy of posts">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">
+              <strong>Policy Name:</strong> {{ policy.policyName }}
+            </h5>
+            <p class="card-text"><strong>Policy Id:</strong> {{ policy.id }}</p>
+            <p class="card-text">
+              <strong>Coverage Amount (INR):</strong>
+              {{ policy.coverageAmount }}
+            </p>
+            <p class="card-text">
+              <strong>Credit Score Requirement:</strong>
+              {{ policy.creditScoreRequirement }}
+            </p>
+            <p class="card-text">
+              <strong>Income Requirement (INR):</strong>
+              {{ policy.incomeRequirement }}
+            </p>
+            <p class="card-text">
+              <strong>Policy Term (Months):</strong>
+              {{ policy.policyTermMonths }}
+            </p>
+            <p class="card-text">
+              <strong>Policy Coverage Description:</strong>
+              {{ policy.policyCoverageDescription }}
+            </p>
+            <p class="card-text">
+              <strong>Premium Amount (INR):</strong> {{ policy.premiumAmount }}
+            </p>
+            <p class="card-text">
+              <strong>Premium Payment Frequency:</strong>
+              {{ policy.premiumPaymentFrequency }}
+            </p>
+            <!-- <button class="btn btn-primary">Customers Details</button> -->
+            <!-- Other policy details... -->
+            <button
+              class="mt-2 btn btn-primary"
+              (click)="fetchCustomers(policy.id)"
+            >
+              Fetch Customers
+            </button>
+            <button
+              class="btn btn-danger ml-2 mt-2"
+              (click)="deletePolicy(policy.id)"
+            >
+              Delete Policy
+            </button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <!-- Create New Policy Button -->
+    <ng-template #noPolicies>
+      <div class="col-md-12 text-center">
+        <p>You don't have any policy.</p>
+        <button
+          class="btn btn-success rounded-pill mt-3 border"
+          (click)="redirectToNewPolicy()"
+        >
+          Publish your first policy
+        </button>
+      </div>
+    </ng-template>
+  </div>
+</section>

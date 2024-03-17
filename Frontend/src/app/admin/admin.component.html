@@ -1,0 +1,84 @@
+<div class="container">
+ 
+  <div class="login-form mt-2 mb-3">
+    <h1>Admin Login</h1>
+    <hr/>
+    <form id="loginForm" #loginForm="ngForm">
+      <div class="input-field mt-3">
+        <label for="providerId">Provider Id</label>
+        <input
+          class="input-field ml-3"
+          type="text"
+          id="providerId"
+          name="providerId"
+          placeholder="Enter your provider id"
+          [(ngModel)]="providerId"
+          required
+          minlength="3"
+        />
+        <span
+          *ngIf="
+            loginForm.controls['providerId'].errors?.required &&
+            loginForm.controls['providerId'].touched
+          "
+          class="error-message"
+          >Provider Id is required.</span
+        >
+        <span
+          *ngIf="
+            loginForm.controls['providerId'].errors?.minlength &&
+            loginForm.controls['providerId'].touched
+          "
+          class="error-message"
+          >Provider Id must be at least 3 characters long.</span
+        >
+      </div>
+      <div class="input-field">
+        <label for="password">Password</label>
+        <input
+          class="input-field ml-3"
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Enter your password"
+          [(ngModel)]="password"
+          required
+          minlength="8"
+        />
+        <span
+          *ngIf="
+            loginForm.controls['password'].errors?.required &&
+            loginForm.controls['password'].touched
+          "
+          class="error-message"
+          >Password is required.</span
+        >
+        <span
+          *ngIf="
+            loginForm.controls['password'].errors?.minlength &&
+            loginForm.controls['password'].touched
+          "
+          class="error-message"
+          >Password must be at least 8 characters long.</span
+        >
+      </div>
+      <div class="checkbox-field">
+        <input
+          type="checkbox"
+          id="remember-me"
+          name="remember-me"
+          [(ngModel)]="rememberMe"
+        />
+        <label class="ml-2" for="remember-me">Remember Me</label>
+      </div>
+      <button
+        type="submit"
+        (click)="adminLogin()"
+        [disabled]="!loginForm.valid"
+      >
+        Login
+      </button>
+    </form>
+    <div *ngIf="loginError" class="error-message">{{ loginError }}</div>
+  </div>
+</div>

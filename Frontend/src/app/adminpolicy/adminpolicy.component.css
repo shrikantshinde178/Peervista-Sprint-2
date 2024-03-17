@@ -1,0 +1,51 @@
+/* adminpolicy.component.css */
+
+/* Optional global styles */
+.container-fluid {
+    padding: 0; /* Remove default container padding */
+}
+
+/* Styles for the form */
+.card {
+    width: 100%;
+}
+
+.form-container {
+    width: 100%;
+}
+
+.btn-primary {
+    width: 200px; /* Optional: Adjust button width as needed */
+}
+
+.btn{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.form-label {
+    font-weight: bold;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.p-instruction{
+    font-size:medium;
+}
+
+h2{
+    font-size: larger;
+    color: rgb(0, 0, 252);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.form-control{
+    font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;;
+}
+
+/* Remove arrows from number input fields */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

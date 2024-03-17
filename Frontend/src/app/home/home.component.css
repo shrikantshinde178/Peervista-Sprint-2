@@ -1,0 +1,20 @@
+.heading{
+ font-weight: 400;
+}
+
+.sub{
+    color: rgba(24, 160, 24, 0.84);
+    font-weight: 700;
+}
+.call{
+    font-size: 18px;
+    color: grey;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.i{
+    font-size: large;
+}
+
+.img{
+    background: transparent;
+}

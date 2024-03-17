@@ -1,0 +1,242 @@
+<div class="container-fluid mt-5 mb-5">
+  <div class="row align-items-center justify-content-center">
+    <!-- Center contents horizontally and vertically -->
+    <div class="col-md-8">
+      <h6 class="card-title p-instruction mb-1">Dear Admin,</h6>
+      <p class="card-text p-instruction">
+        Please fill out the following form to publish a new policy. Ensure all
+        fields are filled accurately.
+      </p>
+      <div class="card mt-4 mb-4">
+        <div class="card-body">
+          <h2>Add New Policy</h2>
+          <form
+            [formGroup]="policyForm"
+            (ngSubmit)="publish()"
+            class="form-container"
+          >
+            <!-- Policy Name -->
+            <div class="mb-3">
+              <label for="policyName" class="form-label">Policy Name</label>
+              <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="policyName"
+                id="policyName"
+                placeholder="Enter policy name"
+                [(ngModel)]="policy.policyName"
+              /></div>
+              <div
+                *ngIf="
+                  policyForm.get('policyName').invalid &&
+                  (policyForm.get('policyName').dirty ||
+                    policyForm.get('policyName').touched)
+                "
+                class="text-danger"
+              >
+                Policy Name is required.
+              </div>
+            </div>
+
+            <!-- Coverage Amount -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="coverageAmount" class="form-label"
+                  >Coverage Amount (INR)</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="coverageAmount"
+                    id="coverageAmount"
+                    placeholder="Enter coverage amount"
+                    [(ngModel)]="policy.coverageAmount"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    policyForm.get('coverageAmount').invalid &&
+                    (policyForm.get('coverageAmount').dirty ||
+                      policyForm.get('coverageAmount').touched)
+                  "
+                  class="text-danger"
+                >
+                  Coverage Amount is required.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="policy.creditScoreRequirement" class="form-label"
+                  >Credit Score Requirement</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="creditScoreRequirement"
+                  id="creditScoreRequirement"
+                  placeholder="Enter credit score"
+                  [(ngModel)]="policy.creditScoreRequirement"
+                />
+                <div
+                  *ngIf="
+                    policyForm.get('creditScoreRequirement').invalid &&
+                    (policyForm.get('creditScoreRequirement').dirty ||
+                      policyForm.get('creditScoreRequirement').touched)
+                  "
+                  class="text-danger"
+                >
+                  Credit Score Requirement is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Income Requirement -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="incomeRequirement" class="form-label"
+                  >Income Requirement (INR)</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="incomeRequirement"
+                    id="incomeRequirement"
+                    placeholder="Enter income requirement"
+                    [(ngModel)]="policy.incomeRequirement"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    policyForm.get('incomeRequirement').invalid &&
+                    (policyForm.get('incomeRequirement').dirty ||
+                      policyForm.get('incomeRequirement').touched)
+                  "
+                  class="text-danger"
+                >
+                  Income Requirement is required.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="policyTermMonths" class="form-label"
+                  >Policy Term (Months)</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  formControlName="policyTermMonths"
+                  id="policyTermMonths"
+                  placeholder="Enter policy term (months)"
+                  [(ngModel)]="policy.policyTermMonths"
+                />
+                <div
+                  *ngIf="
+                    policyForm.get('policyTermMonths').invalid &&
+                    (policyForm.get('policyTermMonths').dirty ||
+                      policyForm.get('policyTermMonths').touched)
+                  "
+                  class="text-danger"
+                >
+                  Policy Term is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Policy Coverage Description -->
+            <div class="mb-3">
+              <label for="policyCoverageDescription" class="form-label"
+                >Policy Coverage Description</label
+              >
+              <textarea
+                class="form-control"
+                formControlName="policyCoverageDescription"
+                id="policyCoverageDescription"
+                rows="3"
+                placeholder="Describe policy coverage"
+                [(ngModel)]="policy.policyCoverageDescription"
+              ></textarea>
+              <div
+                *ngIf="
+                  policyForm.get('policyCoverageDescription').invalid &&
+                  (policyForm.get('policyCoverageDescription').dirty ||
+                    policyForm.get('policyCoverageDescription').touched)
+                "
+                class="text-danger"
+              >
+                Policy Coverage Description is required.
+              </div>
+            </div>
+
+            <!-- Premium Amount and Premium Payment Frequency -->
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="premiumAmount" class="form-label"
+                  >Premium Amount (INR)</label
+                >
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+                  <input
+                    type="number"
+                    class="form-control"
+                    formControlName="premiumAmount"
+                    id="premiumAmount"
+                    placeholder="Enter premium amount"
+                    [(ngModel)]="policy.premiumAmount"
+                  />
+                </div>
+                <div
+                  *ngIf="
+                    policyForm.get('premiumAmount').invalid &&
+                    (policyForm.get('premiumAmount').dirty ||
+                      policyForm.get('premiumAmount').touched)
+                  "
+                  class="text-danger"
+                >
+                  Premium Amount is required.
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="premiumPaymentFrequency" class="form-label"
+                  >Premium Payment Frequency</label
+                >
+                <select
+                  class="form-select form-control"
+                  [(ngModel)]="policy.premiumPaymentFrequency"
+                  formControlName="premiumPaymentFrequency"
+                  id="premiumPaymentFrequency"
+                  required
+                >
+                  <option value="">-- Select Frequency --</option>
+                  <option value="Monthly">Monthly</option>
+                  <option value="Quarterly">Quarterly</option>
+                  <option value="Semi-Annually">Semi-Annually</option>
+                  <option value="Annually">Annually</option>
+                </select>
+                <div
+                  *ngIf="
+                    policyForm.get('premiumPaymentFrequency').invalid &&
+                    (policyForm.get('premiumPaymentFrequency').dirty ||
+                      policyForm.get('premiumPaymentFrequency').touched)
+                  "
+                  class="text-danger"
+                >
+                  Premium Payment Frequency is required.
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="row mb-3 mt-4">
+              <div class="col-md-12 d-flex justify-content-end">
+                <button type="submit" class="btn btn-primary">Publish</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

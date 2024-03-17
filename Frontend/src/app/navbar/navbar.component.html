@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <a routerLink="/home">
+      <img src="../../assets/pvLogo.png" class="ml-3" alt="Logo">
+    </a>
+  </div>
+  
+  <div class="nav-links">
+    <ul class="nav-list">
+      <li class="nav-item"><a routerLink="/home" class="nav-link"><span>Home</span></a></li>
+      <li class="nav-item"><a routerLink="/coverages" class="nav-link"><span>Coverages</span></a></li>
+      <li *ngIf="checkSession()" class="nav-item"><a routerLink="/dashboard" class="nav-link"><span>Policies</span></a></li>
+      <li class="nav-item"><a routerLink="/support" class="nav-link"><span>Support</span></a></li>
+      <li class="nav-item" *ngIf="!isLoggedIn(); else loggedIn"><a routerLink="/login" class="nav-link"><span>Login</span></a></li>
+      <ng-template #loggedIn>
+        <li class="nav-item"><a (click)="logout()" class="nav-link"><span>Logout</span></a></li>
+      </ng-template>
+    </ul>
+  </div>
+</nav>

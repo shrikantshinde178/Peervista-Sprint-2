@@ -1,0 +1,31 @@
+/* Custom CSS for Signup Form */
+.card {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #060198c4;
+    color: #fff;
+    border-bottom: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+  .body-div{
+    background-color: #0063cd1f;  
+    min-height: 540px;
+    width: auto;
+  }
+
+  .card{
+    box-shadow: red;
+  }

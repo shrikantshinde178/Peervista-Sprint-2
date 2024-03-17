@@ -1,0 +1,48 @@
+
+<section class="full-screen-section">
+  <div class="container mb-5 mt-5">
+<!-- {{tempVariable | json}} -->
+  <!-- Display detailed policy information -->
+  <div class="container-fluid mt-5">
+    <div class="card" style="width: 100%">
+      <div class="border">
+        <p class="card-header">My applied policies</p>
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <th class="tableheading">Application Id</th>
+              <th class="tableheading">Policy Name</th>
+              <th class="tableheading">Coverage Amount</th>
+              <th class="tableheading">Term  plan (Months)</th>
+              <th class="tableheading">Premium Amount</th>
+              <th class="tableheading">Payment Frequency</th>
+              <th class="tableheading">Provider</th>
+              <th class="tableheading">Time</th>
+              <th class="tableheading">Status</th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let policy of tempVariable">
+                <td>{{ policy.id }}</td>
+                <td>{{ policy.policy.policyName }}</td>
+                <td>₹{{ policy.policy.coverageAmount }}</td>  
+                <td>{{ policy.policy.policyTermMonths }}</td>
+                <td>₹{{ policy.policy.premiumAmount }}</td>
+                <td>{{ policy.policy.premiumPaymentFrequency }}</td>
+                <td>{{ policy.policy.insuranceProvider.providerName}}
+                  <!-- {{policy.policy.insuranceProvider.address}} -->
+                </td>
+                <td>{{ policy.applicationDate}}</td>
+                <td style="color: green; font-weight: 500;">Processed</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- <button class="btn btn-primary print-receipt-btn" onclick="window.print()" style="position: absolute; bottom: 10px; right: 10px;">Print Receipt</button> -->
+      <!-- <button class="btn btn-primary" (click)="downloadCSV()">Download Invoice</button> -->
+    </div>
+  </div>
+</div>
+</section>

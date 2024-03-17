@@ -1,0 +1,115 @@
+/* Add this CSS for responsive navigation */
+@media screen and (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Change flex direction to column for mobile view */
+  }
+
+  .navbar-left {
+    margin-bottom: 10px; /* Add margin bottom for spacing */
+    order: 1; /* Adjust the order to ensure logo appears first */
+  }
+
+  .nav-links {
+    display: none; /* Hide the nav links by default */
+  }
+
+  .navbar-toggle:checked ~ .nav-links {
+    display: flex; /* Show the nav links when checkbox is checked */
+    flex-direction: column;
+  }
+
+  .nav-links a {
+    padding: 10px 20px; /* Adjust padding for better touch response */
+  }
+
+  .navbar-toggle {
+    display: block; /* Show the checkbox input only on small screens */
+    order: 2; /* Adjust the order to ensure toggle button appears second */
+  }
+
+  .navbar-toggle-label {
+    cursor: pointer;
+    font-size: 20px;
+  }
+}
+
+/* Remaining CSS */
+.navbar {
+  padding: 10px;
+  background-color: #caced1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-left img {
+  height: 30px; /* Adjust height as needed */
+}
+
+.nav-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.search-button {
+  background-color: #ccc;
+  border: none;
+  color: #333;
+  width: 150px;
+  border-radius: 50px;
+  padding: 10px 20px; /* Adjust padding to increase button size */
+  cursor: pointer;
+  font-weight: lighter; /* Set font weight to light */
+  transition: background-color 0.3s; /* Add transition for smoother hover effect */
+}
+
+.search-button:hover {
+  background-color: #bbb; /* Change background color on hover */
+}
+
+.nav-link span {
+  position: relative;
+}
+
+.nav-link {
+  color: darkblue; /* Default color for nav links */
+  text-decoration: none;
+  padding: 5px 10px;
+  font-weight: 400;
+  font-weight: 12px; /* Set font weight to light */
+  position: relative; /* Relative positioning for pseudo-element */
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; /* Position the underline just below the link */
+  left: 0; /* Align the underline to the left */
+  width: 100%; /* Make the underline span the entire width of the link */
+  height: 2px; /* Set the height of the underline */
+  background-color: darkblue; /* Color of the underline */
+  transform: scaleX(0); /* Initially hide the underline */
+  transition: transform 0.3s ease; /* Add transition for smoother animation */
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1); /* Expand the underline on hover */
+}
+
+/* Hide toggle button on larger screens */
+@media screen and (min-width: 769px) {
+  .navbar-toggle {
+    display: none;
+  }
+}

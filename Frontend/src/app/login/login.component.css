@@ -1,0 +1,126 @@
+/* Professional Custom CSS for Login Form */
+.card {
+    background-color: #f0f5f9; /* Light blue-gray background */
+    border-radius: 10px;
+    box-shadow: 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-header {
+    background-color: #060198c4; /* Deep blue color */
+    color: #fff;
+    border-bottom: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #007bff; /* Deep blue color */
+    border-color: #007bff;
+  }
+  
+  .btn-primary {
+    background-color: #0056b3; /* Darker blue shade */
+    border-color: #0056b3;
+  }
+  
+  .form-control:focus {
+    border-color: #007bff; /* Deep blue color */
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+  
+  .link {
+    color: #007bff; /* Deep blue color */
+  }
+  
+  .link:hover {
+    color: #0056b3; /* Darker blue shade */
+  }
+   
+  .body-div{
+    background-color: #0063cd1f;  
+   min-height: 540px;
+   width: 100%;
+  }
+
+  .card{
+    box-shadow: red;
+  }
+
+  .body-div{
+    background-color: #0063cd1f;  
+    width: auto;
+  }
+
+
+  .image {
+    height: 400px; /* Define height */
+    width: auto; /* Let width adjust proportionally */
+    position: absolute; /* Position the image */
+    top: 48%; /* Align to the vertical center */
+    left: 100%; /* Align to the horizontal center */
+    transform: translate(-50%, -50%); /* Center the image precisely */
+  }
+    
+  .animated-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  .animated-column {
+    position: relative;
+    animation: slideInFromRight 1s ease forwards;
+  }
+  
+  .animated-shape {
+    width: 100px;
+    height: 100px;
+    background-color: #ffcc00;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 2s linear infinite;
+  }
+  
+  .animated-fade-in {
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
